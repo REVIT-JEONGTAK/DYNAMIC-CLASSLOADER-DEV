@@ -1,9 +1,7 @@
-package sub;
+package kr.co.busanbank.ap.sub;
 
-import core.DynamicParent;
-import util.MessageUtil;
 
-public class DynamicFirst implements DynamicParent {
+public class DynamicFirst {
 
 	public DynamicFirst() {
 		System.out.println("Create DynamicFirst Constructor");
@@ -16,8 +14,6 @@ public class DynamicFirst implements DynamicParent {
 		DynamicSecond ds = new DynamicSecond();
 		ds.init();
 		ds.response();
-		
-		MessageUtil.notice();
 	}
 	
 	public  void response() {

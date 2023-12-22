@@ -1,4 +1,4 @@
-package util;
+package kr.co.busanbank.ap.util;
 
 public class MessageUtil {
 

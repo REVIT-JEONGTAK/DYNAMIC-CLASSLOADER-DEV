@@ -1,4 +1,4 @@
-package core;
+package kr.co.busanbank.ap.core;
 
 public interface DynamicParent {
 

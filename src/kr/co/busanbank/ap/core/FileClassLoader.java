@@ -1,4 +1,4 @@
-package core;
+package kr.co.busanbank.ap.core;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,6 +14,7 @@ public class FileClassLoader extends ClassLoader {
 		super(FileClassLoader.class.getClassLoader());
 		
 		File file = new File(rootDir);
+		System.out.println("rootpath :: " + file.getPath());
 		if ( file.isDirectory() ) {
 			root = rootDir;
 		} else {
@@ -24,7 +25,7 @@ public class FileClassLoader extends ClassLoader {
 	public Class findClass(String name) throws ClassNotFoundException {
 		
 		String path = root + File.separatorChar + name.replace('.', File.separatorChar) + ".class";
-		
+		System.out.println("path :: " + path);
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(path);
@@ -40,13 +41,10 @@ public class FileClassLoader extends ClassLoader {
 				try {
 					fis.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		}
 		System.out.println("class is null");
 		return null;
-		
-		
 	}
 }
